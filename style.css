@@ -181,8 +181,10 @@ body {
   background-size: cover;
   background-position: center;
   position: relative;
+  /* -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0)); */
+  mask-image: linear-gradient(rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0));
 }
-.hero::after {
+/* .hero::after {
   content: "";
   display: block;
   position: absolute;
@@ -195,11 +197,25 @@ body {
     rgba(255, 255, 255, 0) 50%
   );
   line-height: 1.2;
+} */
+
+.hero .mask-container {
+  position: absolute;
+  /* background: salmon; */
+  inset: 0;
+  mask-image: url("img/header-bg.png");
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  mask-position: center;
 }
 
 .hero .content {
   padding: 1.4rem 7%;
-  max-width: 60rem;
+  /* max-width: 60rem; */
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: 140px;
 }
 
 .hero .content h1 {
@@ -267,6 +283,10 @@ body {
 
 .about .row .about-img img {
   width: 100%;
+  mask-image: url(img/menu/coffee-beans.svg);
+  mask-size: 53%;
+  mask-repeat: no-repeat;
+  mask-position: center;
 }
 
 .about .row .content {
